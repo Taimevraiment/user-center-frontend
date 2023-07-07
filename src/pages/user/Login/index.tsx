@@ -31,7 +31,7 @@ const Login: React.FC = () => {
     const userInfo = await initialState?.fetchUserInfo?.();
 
     if (userInfo) {
-      await setInitialState((s) => ({ ...s, currentUser: userInfo }));
+      await setInitialState((s: any) => ({ ...s, currentUser: userInfo }));
     }
   };
 
@@ -93,7 +93,7 @@ const Login: React.FC = () => {
                   size: 'large',
                   prefix: <UserOutlined className={styles.prefixIcon} />,
                 }}
-                placeholder='请输入账号'
+                placeholder='admin'
                 rules={[
                   {
                     required: true,
@@ -107,7 +107,7 @@ const Login: React.FC = () => {
                   size: 'large',
                   prefix: <LockOutlined className={styles.prefixIcon} />,
                 }}
-                placeholder='请输入密码'
+                placeholder='admin123'
                 rules={[
                   {
                     required: true,
