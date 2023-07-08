@@ -44,6 +44,7 @@ export async function register(body: API.RegisterParams, options?: { [key: strin
 
 /** 搜索用户 GET /api/user/search */
 export async function searchUsers(options?: { [key: string]: any }) {
+  console.log('options', options);
   return request<API.BaseResponse<API.CurrentUser[]>>('/api/user/search', {
     method: 'GET',
     ...(options || {}),

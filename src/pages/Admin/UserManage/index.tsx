@@ -104,8 +104,8 @@ export default () => {
       cardBordered
       // @ts-ignore
       request={async (params = {}, sort, filter) => {
-        console.log(sort, filter);
-        const userList = await searchUsers();
+        console.log(params, sort, filter);
+        const userList = await searchUsers({ params });
         return {
           data: userList,
         };
@@ -137,7 +137,7 @@ export default () => {
         pageSize: 5,
       }}
       dateFormatter='string'
-      headerTitle='高级表格'
+      headerTitle='用户列表'
     />
   );
 };
